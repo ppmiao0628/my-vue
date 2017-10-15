@@ -7,12 +7,13 @@ import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-Vue.component('my-component', {
-  template: '<div>Hello mpp !</div>'
+Vue.component('child', {
+  props: ['message'],
+  template: '<div>Hello {{message}} !</div>'
 })
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
