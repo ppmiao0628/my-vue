@@ -16,6 +16,22 @@ Vue.component('child', {
   },
   template: '<div>Hello {{message}} !</div>'
 })
+
+Vue.component('button-counter', {
+  data () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    incrementCounter: function () {
+      this.counter += 1
+      this.$emit('increment')
+    }
+  },
+  template: '<button v-on:click="incrementCounter">{{ counter }}</button>'
+})
+
 new Vue({
   el: '#app',
   router,
