@@ -3,6 +3,8 @@
     <input v-model="parentMsg">
     <br>
     <child v-bind:message="parentMsg"></child>
+    <child message="1"></child>
+    <child message=true></child>
     <div>{{parentMsg}}</div>
     <img src="./assets/logo.png">
     <router-view/>

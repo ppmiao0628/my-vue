@@ -8,7 +8,12 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.component('child', {
-  props: ['message'],
+  props: {
+    message: {
+      type: Number,
+      required: true
+    }
+  },
   template: '<div>Hello {{message}} !</div>'
 })
 new Vue({
