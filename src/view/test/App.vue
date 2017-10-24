@@ -1,13 +1,11 @@
 <template>
   <div class="hello">
-    <button @click="bshow=!bshow">click me</button>
-    <br>
     <transition name="bounce" mode="out-in">
-      <div v-if="bshow" key="1">
+      <div v-if="bshow" key="1" @click="bshow=!bshow">
         <p>1</p>
         <img src="../../assets/logo.png">
       </div>
-      <div v-else key="2">
+      <div v-else key="2" @click="bshow=!bshow">
         <p>2</p>
         <img src="../../assets/logo.png">
       </div>
