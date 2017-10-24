@@ -1,5 +1,17 @@
 <template>
   <div class="hello">
+    <button @click="bshow=!bshow">click me</button>
+    <br>
+    <transition name="bounce" mode="out-in">
+      <div v-if="bshow" key="1">
+        <p>1</p>
+        <img src="../../assets/logo.png">
+      </div>
+      <div v-else key="2">
+        <p>2</p>
+        <img src="../../assets/logo.png">
+      </div>
+    </transition>
     <input v-model="parentMsg">
     <br>
     <child v-bind:message="parentMsg"></child>
@@ -12,7 +24,7 @@
     <br>
     <button @click="show=!show" class="tgbtn">Toggle</button>
     <button @click="show1=!show1" class="tgbtn">Toggle1</button>
-    <transition name="fade">
+    <transition name="slide-fade">
       <div v-if="show">
         <input type="checkbox" id="1" value="jack" v-model="checkedMsg"/>
         <label for="jack">jack</label>
@@ -57,6 +69,7 @@
         age: 0,
         show: true,
         show1: true,
+        bshow: true,
         total: 0
       }
     },
@@ -85,16 +98,55 @@
   a {
     color: #42b983;
   }
-  .basecs{
+
+  .basecs {
     background-color: #42b983;
   }
+
   .tgbtn {
     background-color: #42b983;
   }
-  .fade-enter-active, .fade-leave-active {
-       transition: opacity .5s
-     }
-  .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
-    opacity: 0
+
+  .bounce-enter-active, .bounce-leave-active {
+  transition: opacity .5s
   }
+  .bounce-enter, .bounce-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+  }
+  /* 可以设置不同的进入和离开动画 */
+  /* 设置持续时间和动画函数 */
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */
+  {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+  /*.bounce-enter-active {*/
+    /*animation: bounce-in 1.5s;*/
+  /*}*/
+
+  /*.bounce-leave-active {*/
+    /*animation: bounce-in 1.5s reverse;*/
+  /*}*/
+
+  /*@keyframes bounce-in {*/
+    /*0% {*/
+      /*transform: scale(0);*/
+    /*}*/
+    /*50% {*/
+      /*transform: scale(1.5);*/
+    /*}*/
+    /*100% {*/
+      /*transform: scale(1);*/
+    /*}*/
+  /*}*/
 </style>
