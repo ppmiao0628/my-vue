@@ -1,5 +1,10 @@
 <template>
   <div class="hello">
+    <transition-group name="list" tap="p">
+      <span v-for="item in items" :key="item" class="list-item" @click="add">
+        {{item}}
+      </span>
+    </transition-group>
     <transition name="bounce" mode="out-in">
       <div v-if="bshow" key="1" @click="bshow=!bshow">
         <p>1</p>
@@ -61,6 +66,8 @@
     name: 'app',
     data () {
       return {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        nextNum: 10,
         parentMsg: '',
         checkedMsg: [],
         radioMsg: '',
@@ -72,6 +79,15 @@
       }
     },
     methods: {
+      randomIndex: function () {
+        return Math.floor(Math.random() * this.items.length)
+      },
+      add: function () {
+        this.items.splice(this.randomIndex(), 0, this.nextNum++)
+      },
+      remove: function () {
+        this.items.splice(this.randomIndex(), 1)
+      },
       incrementTotal: function () {
         this.total += 1
       }
@@ -79,6 +95,21 @@
   }
 </script>
 <style scoped>
+  .list-item {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #42b983;
+  }
+
+  .list-enter-active, .list-leave-active {
+    transition: all 1s;
+  }
+
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
   h1, h2 {
     font-weight: normal;
   }
@@ -106,11 +137,14 @@
   }
 
   .bounce-enter-active, .bounce-leave-active {
-  transition: opacity .5s
+    transition: opacity .5s
   }
-  .bounce-enter, .bounce-leave-to /* .fade-leave-active in below version 2.1.8 */ {
-  opacity: 0
+
+  .bounce-enter, .bounce-leave-to /* .fade-leave-active in below version 2.1.8 */
+  {
+    opacity: 0
   }
+
   /* 可以设置不同的进入和离开动画 */
   /* 设置持续时间和动画函数 */
   .slide-fade-enter-active {
@@ -129,22 +163,22 @@
   }
 
   /*.bounce-enter-active {*/
-    /*animation: bounce-in 1.5s;*/
+  /*animation: bounce-in 1.5s;*/
   /*}*/
 
   /*.bounce-leave-active {*/
-    /*animation: bounce-in 1.5s reverse;*/
+  /*animation: bounce-in 1.5s reverse;*/
   /*}*/
 
   /*@keyframes bounce-in {*/
-    /*0% {*/
-      /*transform: scale(0);*/
-    /*}*/
-    /*50% {*/
-      /*transform: scale(1.5);*/
-    /*}*/
-    /*100% {*/
-      /*transform: scale(1);*/
-    /*}*/
+  /*0% {*/
+  /*transform: scale(0);*/
+  /*}*/
+  /*50% {*/
+  /*transform: scale(1.5);*/
+  /*}*/
+  /*100% {*/
+  /*transform: scale(1);*/
+  /*}*/
   /*}*/
 </style>
