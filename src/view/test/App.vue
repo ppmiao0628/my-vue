@@ -1,8 +1,11 @@
 <template>
   <div class="hello">
-    <transition-group name="list" tap="p">
-      <span v-for="item in items" :key="item" class="list-item" @click="add">
-        {{item}}
+    <div class="info">agentInfo：{{agentInfo}}</div>
+    <div class="info">appCodeName：{{appCodeName}}</div>
+    <div class="info">appVersion：{{appVersion}}</div>
+    <transition-group name="list-complete" tap="p">
+      <span v-for="itt in item" :key="itt" class="list-complete-item" @click="add">
+        {{itt}}
       </span>
     </transition-group>
     <transition name="bounce" mode="out-in">
@@ -66,7 +69,7 @@
     name: 'app',
     data () {
       return {
-        items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        item: [14, 53, 65, 99, 98, 12, 2, 3, 4, 5, 6, 7, 8, 9],
         nextNum: 10,
         parentMsg: '',
         checkedMsg: [],
@@ -75,15 +78,44 @@
         show: true,
         show1: true,
         bshow: true,
+        agentInfo: navigator.userAgent,
+        appCodeName: navigator.appCodeName,
+        appVersion: navigator.appVersion,
         total: 0
       }
     },
     methods: {
+      quickSort: function (left, right) {
+        let i, j, t, temp
+        temp = this.item[left]
+        i = left
+        j = right
+        while (i !== j) {
+          while (this.item[j] >= temp && i < j) {
+            j--
+          }
+          while (this.item[i] <= temp && i < j) {
+            i++
+          }
+          if (i < j) {
+            t = this.item[i]
+            this.item[i] = this.item[j]
+            this.item[j] = t
+          }
+        }
+        this.item[left] = this.item[i]
+        this.item[i] = temp
+        this.quickSort(left, i - 1)
+        this.quickSort(i + 1, right)
+      },
       randomIndex: function () {
         return Math.floor(Math.random() * this.items.length)
       },
       add: function () {
-        this.items.splice(this.randomIndex(), 0, this.nextNum++)
+//        this.items.splice(this.randomIndex(), 0, this.nextNum++)
+        console.log(this.item)
+        this.quickSort(0, this.item.length)
+        console.log(this.item)
       },
       remove: function () {
         this.items.splice(this.randomIndex(), 1)
@@ -101,13 +133,35 @@
     background-color: #42b983;
   }
 
-  .list-enter-active, .list-leave-active {
+  /*.list-enter-active, .list-leave-active {*/
+  /*transition: all 1s;*/
+  /*}*/
+
+  /*.list-enter, .list-leave-to {*/
+  /*opacity: 0;*/
+  /*transform: translateY(30px);*/
+  /*}*/
+
+  .list-complete-item {
     transition: all 1s;
+    display: inline-block;
+    margin-right: 10px;
   }
 
-  .list-enter, .list-leave-to {
+  .list-complete-enter, .list-complete-leave-to
+    /* .list-complete-leave-active for below version 2.1.8 */
+  {
     opacity: 0;
     transform: translateY(30px);
+  }
+
+  .list-complete-leave-active {
+    position: absolute;
+  }
+
+  .info {
+    font-weight: bold;
+    font-size: 2rem;
   }
 
   h1, h2 {
