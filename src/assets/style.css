@@ -151,14 +151,14 @@ section {
 
 .pec-border-bottom0 {
   border-bottom: 0 !important; }
-.pec-border-bottom0:after {
-  height: 0 !important;
-  border-bottom: 0 !important; }
+  .pec-border-bottom0:after {
+    height: 0 !important;
+    border-bottom: 0 !important; }
 
 .pec-link {
   color: #4175D5; }
-.pec-link:active, .pec-link:visited {
-  color: #4175D5; }
+  .pec-link:active, .pec-link:visited {
+    color: #4175D5; }
 
 .pec-align-center {
   display: -webkit-flex;
@@ -180,6 +180,7 @@ section {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -202,7 +203,8 @@ section {
 .rule-list .rule-box li,
 .tran-sequence-tabbar .tran-sequence-tabbar-item,
 .tran-list .tran-list-item .tran-item-body,
-.set-li-box .set-foot-body {
+.set-li-box .set-foot-body,
+.advert .advert-body {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-flex: 1;
@@ -219,7 +221,7 @@ section {
   -ms-flex-align: center;
   align-items: center; }
 
-.pec-list .pec-list-item, .account-balance .balance-box .account-balance-head, .account-balance .account-balance-foot, .name-blance, .rule-list .rule-box, .curr-list .curr-list-item, .tran-xq, .tran-list .tran-list-item, .choice-time, .set-list-head, .set-li-box{
+.pec-list .pec-list-item, .account-balance .balance-box .account-balance-head, .account-balance .account-balance-foot, .name-blance, .rule-list .rule-box, .curr-list .curr-list-item, .tran-xq, .tran-list .tran-list-item, .choice-time, .set-list-head, .set-li-box, .advert {
   display: -webkit-flex;
   display: -webkit-box;
   display: -moz-box;
@@ -228,13 +230,14 @@ section {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
 
-.balance-box.CreditCard .pec-list-item , .set-li-box {
+.balance-box.CreditCard .pec-list-item, .set-li-box {
   display: -webkit-flex;
   display: -webkit-box;
   display: -moz-box;
@@ -244,6 +247,7 @@ section {
   -moz-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start; }
+
 /*agreement*/
 
 /*按钮类*/
@@ -259,22 +263,22 @@ button.pec-secondary-btn {
 button.pec-secondary-btn {
   color: #F37938;
   background: #FFFFFF; }
-button.pec-secondary-btn:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  display: block;
-  width: 200%;
-  height: 200%;
-  border-radius: .16rem;
-  border: 1px solid #F37938;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0; }
+  button.pec-secondary-btn:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    display: block;
+    width: 200%;
+    height: 200%;
+    border-radius: .16rem;
+    border: 1px solid #F37938;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
 
 button[size="big"].pec-primary-btn,
 button[size="big"].pec-secondary-btn {
@@ -295,8 +299,8 @@ button.pec-secondary-btn:active {
   font-size: 0;
   padding-left: .30rem;
   padding-right: .30rem; }
-.pec-btn-zone button + button {
-  margin-left: .30rem; }
+  .pec-btn-zone button + button {
+    margin-left: .30rem; }
 
 /*开关*/
 
@@ -316,56 +320,56 @@ header {
   height: .88rem;
   text-align: center;
   background: #FFFFFF; }
-header:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 0;
-  border-bottom: 1px solid #D9D9D9;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-header .pec-header-left,
-header .pec-header-right {
-  position: absolute;
-  top: 0;
-  left: .30rem;
-  color: #F37938;
-  font-size: 0.3rem;
-  height: .88rem;
-  line-height: .88rem;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-header .pec-header-right {
-  left: initial;
-  right: .30rem; }
-header .pec-header-title {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2.86rem;
-  height: .88rem;
-  line-height: .88rem;
-  color: #F37938;
-  font-size: 0.36rem;
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%); }
+  header:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #D9D9D9;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  header .pec-header-left,
+  header .pec-header-right {
+    position: absolute;
+    top: 0;
+    left: .30rem;
+    color: #F37938;
+    font-size: 0.3rem;
+    height: .88rem;
+    line-height: .88rem;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  header .pec-header-right {
+    left: initial;
+    right: .30rem; }
+  header .pec-header-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2.86rem;
+    height: .88rem;
+    line-height: .88rem;
+    color: #F37938;
+    font-size: 0.36rem;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
 
 /*图标*/
 .icon-back {
@@ -373,33 +377,33 @@ header .pec-header-title {
   width: .88rem;
   height: .88rem;
   display: inline-block; }
-.icon-back:after {
-  position: absolute;
-  content: "";
-  top: .24rem;
-  left: .10rem;
-  width: .20rem;
-  height: .38rem;
-  display: block;
-  background-image: url("../images/common/icon-back.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%; }
+  .icon-back:after {
+    position: absolute;
+    content: "";
+    top: .24rem;
+    left: .10rem;
+    width: .20rem;
+    height: .38rem;
+    display: block;
+    background-image: url("../../images/common/icon-back.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
 
 .icon-arrow {
   width: .13rem;
   height: .24rem;
   margin-left: .16rem;
   display: inline-block;
-  background: url("../images/common/arrow-right.svg") no-repeat center;
+  background: url("../../images/common/arrow-right.svg") no-repeat center;
   background-size: .13rem .24rem;
   vertical-align: middle; }
-.icon-arrow.up {
-  margin-top: -.06rem;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg); }
-.icon-arrow.down {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg); }
+  .icon-arrow.up {
+    margin-top: -.06rem;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .icon-arrow.down {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg); }
 
 .icon-check,
 .icon-checked {
@@ -407,18 +411,18 @@ header .pec-header-title {
   height: .36rem;
   display: inline-block;
   vertical-align: middle;
-  background-image: url("../images/common/icon-check.svg");
+  background-image: url("../../images/common/icon-check.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%; }
 
 .icon-checked {
-  background-image: url("../images/common/icon-checked.svg"); }
+  background-image: url("../../images/common/icon-checked.svg"); }
 
 .icon-bank-pa {
   width: .52rem;
   height: .52rem;
   display: inline-block;
-  background: url("../images/common/icon-bank-pa.png") no-repeat;
+  background: url("../../images/common/icon-bank-pa.png") no-repeat;
   background-size: 100% 100%; }
 
 /*pull-refresh*/
@@ -429,6 +433,7 @@ header .pec-header-title {
 /*navbar*/
 
 /*picker*/
+
 .icon-check, .icon-checked {
   width: .38rem;
   height: .38rem; }
@@ -452,53 +457,53 @@ header .pec-header-title {
   font-size: 0.28rem;
   background: #FFFFFF;
   overflow: hidden; }
-.pec-list .pec-list-item {
-  line-height: 1.26;
-  position: relative;
-  min-height: 1.10rem;
-  padding-top: .20rem;
-  padding-bottom: .20rem;
-  padding-left: .30rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-.pec-list .pec-list-item:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.pec-list .pec-list-item:nth-last-of-type(1):after {
-  display: none; }
-.pec-list .pec-list-item .pec-item-head {
-  color: #666666;
-  font-size: 0.3rem;
-  width: 2.10rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-.pec-list .pec-list-item .pec-item-media {
-  font-size: 0;
-  margin-right: .30rem; }
-.pec-list .pec-list-item .pec-item-body {
-  color: #1E1E1E;
-  font-size: 0.3rem;
-  margin-right: .30rem; }
-.pec-list .pec-list-item .pec-item-foot {
-  font-size: 0.3rem;
-  margin-right: .30rem; }
-.pec-list .pec-list-item-assist {
-  position: relative;
-  font-size: 0.24rem;
-  color: #B2B2B2;
-  height: .24rem;
-  line-height: .24rem;
-  margin-top: .08rem; }
+  .pec-list .pec-list-item {
+    line-height: 1.26;
+    position: relative;
+    min-height: 1.10rem;
+    padding-top: .20rem;
+    padding-bottom: .20rem;
+    padding-left: .30rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .pec-list .pec-list-item:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #E7E7E7;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%; }
+    .pec-list .pec-list-item:nth-last-of-type(1):after {
+      display: none; }
+    .pec-list .pec-list-item .pec-item-head {
+      color: #666666;
+      font-size: 0.3rem;
+      width: 2.10rem;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    .pec-list .pec-list-item .pec-item-media {
+      font-size: 0;
+      margin-right: .30rem; }
+    .pec-list .pec-list-item .pec-item-body {
+      color: #1E1E1E;
+      font-size: 0.3rem;
+      margin-right: .30rem; }
+    .pec-list .pec-list-item .pec-item-foot {
+      font-size: 0.3rem;
+      margin-right: .30rem; }
+  .pec-list .pec-list-item-assist {
+    position: relative;
+    font-size: 0.24rem;
+    color: #B2B2B2;
+    height: .24rem;
+    line-height: .24rem;
+    margin-top: .08rem; }
 
 /*Slide*/
 
@@ -515,139 +520,139 @@ header .pec-header-title {
   margin-right: .3rem;
   border-radius: 0.18rem;
   overflow: hidden; }
-.account-balance + .account-balance {
-  margin-top: .2rem; }
-.account-balance .balance-box {
-  background-image: url(../images/Account-Balance/bgOrange3.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: relative; }
-.account-balance .balance-box .account-balance-head {
-  padding: .3rem .3rem;
-  font-size: 0.3rem;
-  color: #FFFFFF; }
-.account-balance .balance-box .account-balance-head p {
-  font-size: 0.4rem;
-  color: #cb4e2a;
-  font-weight: bold; }
-.account-balance .balance-box .account-balance-body {
-  margin-top: -0.2rem; }
-.account-balance .balance-box .account-balance-body .pec-list {
-  background: transparent; }
-.account-balance .balance-box .account-balance-body .pec-list .pec-list-item:after {
-  border: none; }
-.account-balance .balance-box .account-balance-body .pec-list .pec-list-item .pec-item-head {
-  font-size: 0.36rem;
-  color: #FFFFFF;
-  width: 2.90rem; }
-.account-balance .balance-box .account-balance-body .pec-list .pec-list-item p {
-  font-size: 0.36rem;
-  color: #FFFFFF; }
-.account-balance .account-balance-foot {
-  font-size: 0.3rem;
-  color: #666666;
-  padding: .3rem 0;
-  height: 1.1rem;
-  background: #FFFFFF;
-  border-top: 1px solid #E7E7E7; }
-.account-balance .account-balance-foot .option-item {
-  padding: 0 .05rem;
-  text-align: center;
-  border-right: 1px solid #E7E7E7; }
-.account-balance .account-balance-foot .option-item:last-child {
-  border-right: 0; }
+  .account-balance + .account-balance {
+    margin-top: .2rem; }
+  .account-balance .balance-box {
+    background-image: url(../../images/Account-Balance/bgOrange3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative; }
+    .account-balance .balance-box .account-balance-head {
+      padding: .3rem .3rem;
+      font-size: 0.3rem;
+      color: #FFFFFF; }
+      .account-balance .balance-box .account-balance-head p {
+        font-size: 0.4rem;
+        color: #cb4e2a;
+        font-weight: bold; }
+    .account-balance .balance-box .account-balance-body {
+      margin-top: -0.2rem; }
+      .account-balance .balance-box .account-balance-body .pec-list {
+        background: transparent; }
+        .account-balance .balance-box .account-balance-body .pec-list .pec-list-item:after {
+          border: none; }
+        .account-balance .balance-box .account-balance-body .pec-list .pec-list-item .pec-item-head {
+          font-size: 0.36rem;
+          color: #FFFFFF;
+          width: 2.90rem; }
+        .account-balance .balance-box .account-balance-body .pec-list .pec-list-item p {
+          font-size: 0.36rem;
+          color: #FFFFFF; }
+  .account-balance .account-balance-foot {
+    font-size: 0.3rem;
+    color: #666666;
+    padding: .3rem 0;
+    height: 1.1rem;
+    background: #FFFFFF;
+    border-top: 1px solid #E7E7E7; }
+    .account-balance .account-balance-foot .option-item {
+      padding: 0 .05rem;
+      text-align: center;
+      border-right: 1px solid #E7E7E7; }
+      .account-balance .account-balance-foot .option-item:last-child {
+        border-right: 0; }
 
 .account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item {
   min-height: .70rem;
   padding-top: 0;
   padding-bottom: 0; }
-.account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item:first-child {
-  margin-top: .20rem; }
-.account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item:last-child {
-  margin-bottom: .20rem; }
+  .account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item:first-child {
+    margin-top: .20rem; }
+  .account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item:last-child {
+    margin-bottom: .20rem; }
 
 .account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item .pec-item-head,
 .account-balance .balance-box.other-bank .account-balance-body .pec-list .pec-list-item p {
   font-size: 0.3rem; }
 
 .balance-box.yellow {
-  background-image: url(../images/Account-Balance/bgYellow3.jpg);
+  background-image: url(../../images/Account-Balance/bgYellow3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.yellow .account-balance-head p {
-  color: #e1a231; }
+  .balance-box.yellow .account-balance-head p {
+    color: #e1a231; }
 
 .balance-box.diamond {
-  background-image: url(../images/Account-Balance/bgDarkGrey3.jpg);
+  background-image: url(../../images/Account-Balance/bgDarkGrey3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.diamond .account-balance-head p {
-  color: #292928; }
+  .balance-box.diamond .account-balance-head p {
+    color: #292928; }
 
 .balance-box.baigold {
-  background-image: url(../images/Account-Balance/bgGray3.jpg);
+  background-image: url(../../images/Account-Balance/bgGray3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.baigold .account-balance-head p {
-  color: #4a4a4a; }
+  .balance-box.baigold .account-balance-head p {
+    color: #4a4a4a; }
 
 .balance-box.gold {
-  background-image: url(../images/Account-Balance/bgGolden3.jpg);
+  background-image: url(../../images/Account-Balance/bgGolden3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.gold .account-balance-head p {
-  color: #ffa326; }
+  .balance-box.gold .account-balance-head p {
+    color: #ffa326; }
 
 .balance-box.cunzhe {
-  background-image: url(../images/Account-Balance/bgGoldenYellow3.jpg);
+  background-image: url(../../images/Account-Balance/bgGoldenYellow3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.cunzhe .account-balance-head p {
-  color: #eb7a12; }
+  .balance-box.cunzhe .account-balance-head p {
+    color: #eb7a12; }
 
 .balance-box.black {
-  background-image: url(../images/Account-Balance/bgBack3.jpg);
+  background-image: url(../../images/Account-Balance/bgBack3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.black .account-balance-head p {
-  color: #000000; }
+  .balance-box.black .account-balance-head p {
+    color: #000000; }
 
 .balance-box.white {
   background-image: none;
   background-color: #FFFFFF; }
-.balance-box.white .account-balance-head p {
-  font-size: 0.4rem;
-  font-weight: bold;
-  color: #1E1E1E; }
-.balance-box.white .account-balance-head span {
-  color: #1E1E1E; }
-.balance-box.white .account-balance-body .pec-list .pec-list-item .pec-item-head {
-  color: #666666; }
-.balance-box.white .account-balance-body .pec-list .pec-list-item p {
-  color: #666666; }
+  .balance-box.white .account-balance-head p {
+    font-size: 0.4rem;
+    font-weight: bold;
+    color: #1E1E1E; }
+  .balance-box.white .account-balance-head span {
+    color: #1E1E1E; }
+  .balance-box.white .account-balance-body .pec-list .pec-list-item .pec-item-head {
+    color: #666666; }
+  .balance-box.white .account-balance-body .pec-list .pec-list-item p {
+    color: #666666; }
 
 .balance-box.CreditCard {
-  background-image: url(../images/Account-Balance/bgCreditCard3.jpg);
+  background-image: url(../../images/Account-Balance/bgCreditCard3.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative; }
-.balance-box.CreditCard .account-balance-head p {
-  color: #eb7a12; }
-.balance-box.CreditCard .pec-list-item .pec-item-foot .money {
-  width: 100%; }
-.balance-box.CreditCard .pec-list-item .pec-item-foot .money div {
-  width: 100%; }
-.balance-box.CreditCard .pec-list-item .pec-item-foot .money div p {
-  color: #FFFFFF;
-  text-align: right; }
-.balance-box.CreditCard .pec-list-item .pec-item-foot .money div p:nth-child(2) {
-  opacity: .6; }
+  .balance-box.CreditCard .account-balance-head p {
+    color: #eb7a12; }
+  .balance-box.CreditCard .pec-list-item .pec-item-foot .money {
+    width: 100%; }
+    .balance-box.CreditCard .pec-list-item .pec-item-foot .money div {
+      width: 100%; }
+      .balance-box.CreditCard .pec-list-item .pec-item-foot .money div p {
+        color: #FFFFFF;
+        text-align: right; }
+        .balance-box.CreditCard .pec-list-item .pec-item-foot .money div p:nth-child(2) {
+          opacity: .6; }
 
 .balance-box.other-bank .account-balance-head p {
   font-size: 0.34rem;
@@ -659,14 +664,46 @@ header .pec-header-title {
   height: .24rem;
   margin-left: .16rem;
   display: inline-block;
-  background: url(../images/common/arrow-right3.svg) no-repeat;
+  background: url(../../images/common/arrow-right3.svg) no-repeat;
   background-size: .16rem .24rem;
   vertical-align: middle;
   margin-top: -.04rem; }
 
+.icon-1 {
+  width: 0.52rem;
+  height: 0.52rem;
+  background: url(../../images/Account-Balance/icon-1.png) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 0.2rem; }
+
+.icon-2 {
+  width: 0.53rem;
+  height: 0.54rem;
+  background: url(../../images/Account-Balance/icon-2.png) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 0.2rem; }
+
+.icon-3 {
+  width: 0.54rem;
+  height: 0.54rem;
+  background: url(../../images/Account-Balance/icon-3.png) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 0.2rem; }
+
+.icon-4 {
+  width: 0.50rem;
+  height: 0.47rem;
+  background: url(../../images/Account-Balance/icon-4.png) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 0.2rem; }
+
 .link {
   position: absolute;
-  background: url(../images/Account-Balance/link.png) no-repeat;
+  background: url(../../images/Account-Balance/link.png) no-repeat;
   background-size: 100% 100%;
   width: 1.54rem;
   height: 1.52rem;
@@ -682,29 +719,29 @@ header .pec-header-title {
   border-radius: .20rem;
   box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.25);
   background: #FFFFFF; }
-.btn-addBankCard i.icon-add {
-  margin-left: .40rem;
-  display: inline-block; }
+  .btn-addBankCard i.icon-add {
+    margin-left: .40rem;
+    display: inline-block; }
 
 .add-card {
   color: #F37938;
   margin-top: .35rem; }
-.add-card .icon-add {
-  position: relative;
-  background: url(../images/Account-Balance/add.png);
-  background-size: 100% 100%;
-  width: 0.51rem;
-  height: 0.51rem;
-  display: inline-block;
-  margin-right: 0.35rem;
-  margin-top: 0.16rem; }
-.add-card .add-txt {
-  text-align: left; }
-.add-card .add-txt .big-p {
-  font-size: 0.3rem;
-  font-weight: bold; }
-.add-card .add-txt .small-p {
-  font-size: 0.24rem; }
+  .add-card .icon-add {
+    position: relative;
+    background: url(../../images/Account-Balance/add.png);
+    background-size: 100% 100%;
+    width: 0.51rem;
+    height: 0.51rem;
+    display: inline-block;
+    margin-right: 0.35rem;
+    margin-top: 0.16rem; }
+  .add-card .add-txt {
+    text-align: left; }
+    .add-card .add-txt .big-p {
+      font-size: 0.3rem;
+      font-weight: bold; }
+    .add-card .add-txt .small-p {
+      font-size: 0.24rem; }
 
 /*详情页*/
 .pec-list .pec-tips {
@@ -726,28 +763,28 @@ header .pec-header-title {
   transform-origin: 0 100%; }
 .pec-list.font-28 .pec-list-item {
   font-size: 0.28rem; }
-.pec-list.font-28 .pec-list-item:nth-last-of-type(1):after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.pec-list.font-28 .pec-list-item .pec-item-head,
-.pec-list.font-28 .pec-list-item .pec-item-foot {
-  font-size: 0.28rem; }
+  .pec-list.font-28 .pec-list-item:nth-last-of-type(1):after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-bottom: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  .pec-list.font-28 .pec-list-item .pec-item-head,
+  .pec-list.font-28 .pec-list-item .pec-item-foot {
+    font-size: 0.28rem; }
 
 .name-blance {
   width: 4em; }
 
 .doc {
-  background: url(../images/Account-Balance/doc.png) no-repeat;
+  background: url(../../images/Account-Balance/doc.png) no-repeat;
   background-size: 100% 100%;
   width: 0.36rem;
   height: 0.36rem;
@@ -762,85 +799,85 @@ header .pec-header-title {
 
 .rule-list {
   position: relative; }
-.rule-list:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-top: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.rule-list .rule-box {
-  font-size: 0.28rem;
-  color: #666666;
-  padding: .3rem 0;
-  background: #FFFFFF;
-  position: relative; }
-.rule-list .rule-box:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.rule-list .rule-box li {
-  padding: 0 .15rem;
-  text-align: center; }
-.rule-list .rule-box + .rule-box {
-  color: #1E1E1E; }
+  .rule-list:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-top: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  .rule-list .rule-box {
+    font-size: 0.28rem;
+    color: #666666;
+    padding: .3rem 0;
+    background: #FFFFFF;
+    position: relative; }
+    .rule-list .rule-box:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #E7E7E7;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%; }
+    .rule-list .rule-box li {
+      padding: 0 .15rem;
+      text-align: center; }
+  .rule-list .rule-box + .rule-box {
+    color: #1E1E1E; }
 
 /*活期*/
 .curr-list {
   background: #F37938;
   color: #FFFFFF; }
-.curr-list .curr-list-item {
-  line-height: 1.26;
-  position: relative;
-  min-height: 0.9rem;
-  padding: 0.2rem 0.3rem;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 0.3rem; }
-.curr-list .curr-list-item:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0.3rem;
-  right: 0.3rem;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #FFFFFF;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-  opacity: 0.2; }
-.curr-list .curr-list-item:nth-last-of-type(1):after {
-  display: none; }
-.curr-list .curr-list-item.border-line:after {
-  left: 0;
-  right: 0; }
-.curr-list .curr-list-item.h54 {
-  padding: 0.2rem 0.3rem 0;
-  min-height: 0.54rem; }
+  .curr-list .curr-list-item {
+    line-height: 1.26;
+    position: relative;
+    min-height: 0.9rem;
+    padding: 0.2rem 0.3rem;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.3rem; }
+    .curr-list .curr-list-item:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0.3rem;
+      right: 0.3rem;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #FFFFFF;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      opacity: 0.2; }
+    .curr-list .curr-list-item:nth-last-of-type(1):after {
+      display: none; }
+  .curr-list .curr-list-item.border-line:after {
+    left: 0;
+    right: 0; }
+  .curr-list .curr-list-item.h54 {
+    padding: 0.2rem 0.3rem 0;
+    min-height: 0.54rem; }
 
 .icon-arrow-white {
   width: .16rem;
   height: .24rem;
   margin-left: .16rem;
   display: inline-block;
-  background: url("../images/common/arrow-right3.svg") no-repeat;
+  background: url("../../images/common/arrow-right3.svg") no-repeat;
   background-size: 100% 100%;
   vertical-align: middle;
   margin-top: -2px; }
@@ -878,58 +915,80 @@ header .pec-header-title {
   font-size: 0;
   background: #FFFFFF;
   overflow: hidden; }
-.curr-menu li {
-  width: 2.5rem;
-  height: 2.09rem;
-  padding: 0.5rem 0.2rem;
-  text-align: center;
-  vertical-align: top;
-  display: inline-block;
-  position: relative; }
-.curr-menu li:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #D9D9D9;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 200%;
-  transform-origin: 0 200%;
-  z-index: 1; }
-.curr-menu li:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #D9D9D9;
-  width: 1px;
-  height: 100%;
-  -webkit-transform: scaleX(0.5);
-  transform: scaleX(0.5);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  z-index: 1; }
-.curr-menu li:nth-child(3n):before {
-  background: transparent; }
-.curr-menu li img {
-  width: 0.54rem;
-  height: 0.54rem;
-  display: inline-block; }
-.curr-menu li p {
-  margin-top: 0.15rem;
-  font-size: 0.3rem;
-  color: #666666; }
+  .curr-menu li {
+    width: 2.5rem;
+    height: 2.09rem;
+    padding: 0.5rem 0.2rem;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    position: relative; }
+    .curr-menu li:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #D9D9D9;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 200%;
+      transform-origin: 0 200%;
+      z-index: 1; }
+    .curr-menu li:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #D9D9D9;
+      width: 1px;
+      height: 100%;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      z-index: 1; }
+    .curr-menu li:nth-child(3n):before {
+      background: transparent; }
+    .curr-menu li img {
+      width: 0.54rem;
+      height: 0.54rem;
+      display: inline-block; }
+    .curr-menu li p {
+      margin-top: 0.15rem;
+      font-size: 0.3rem;
+      color: #666666; }
 
 .service-list {
   padding: .3rem;
   background: #FFFFFF;
   font-size: 0.3rem;
   color: #666666; }
+
+.icon-ser-2,
+.icon-ser-3,
+.icon-ser-4 {
+  display: block;
+  width: .64rem;
+  height: .64rem;
+  background: url("../../images/Account-management/icon-ser-1.png") no-repeat;
+  background-size: 100% 100%;
+  margin-right: .3rem; }
+
+.icon-ser-2 {
+  background: url("../../images/Account-management/icon-ser-2.png") no-repeat;
+  background-size: 100% 100%; }
+
+.icon-ser-3 {
+  background: url("../../images/Account-management/icon-ser-3.png") no-repeat;
+  background-size: 100% 100%; }
+
+.icon-ser-4 {
+  background: url("../../images/Account-management/icon-ser-4.png") no-repeat;
+  background-size: 100% 100%; }
 
 /* 底部广告位*/
 
@@ -940,70 +999,70 @@ header .pec-header-title {
   min-height: 1.10rem;
   background: #FFFFFF;
   position: relative; }
-.tran-sequence-tabbar:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-top: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.tran-sequence-tabbar .tran-sequence-tabbar-item {
-  padding: 0 0.3rem;
-  color: #666666;
-  font-size: 0.3rem;
-  text-align: center;
-  border-right: 1px solid #E7E7E7; }
-.tran-sequence-tabbar .tran-sequence-tabbar-item:last-child {
-  border-right: 0 !important; }
-.tran-sequence-tabbar .tran-sequence-tabbar-item p {
-  height: 0.6rem;
-  line-height: 0.6rem;
-  width: 9em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  .tran-sequence-tabbar:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-top: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  .tran-sequence-tabbar .tran-sequence-tabbar-item {
+    padding: 0 0.3rem;
+    color: #666666;
+    font-size: 0.3rem;
+    text-align: center;
+    border-right: 1px solid #E7E7E7; }
+    .tran-sequence-tabbar .tran-sequence-tabbar-item:last-child {
+      border-right: 0 !important; }
+    .tran-sequence-tabbar .tran-sequence-tabbar-item p {
+      height: 0.6rem;
+      line-height: 0.6rem;
+      width: 9em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
 
 .z-index30 {
   z-index: 30; }
 
 .border-r {
   position: relative; }
-.border-r:after {
-  content: "";
-  position: absolute;
-  top: -0.15rem;
-  right: 0;
-  bottom: -0.2rem;
-  background: #e7e7e7;
-  width: 1px;
-  height: 190%;
-  -webkit-transform: scaleX(0.5);
-  transform: scaleX(0.5);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  z-index: 1; }
+  .border-r:after {
+    content: "";
+    position: absolute;
+    top: -0.15rem;
+    right: 0;
+    bottom: -0.2rem;
+    background: #e7e7e7;
+    width: 1px;
+    height: 190%;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    z-index: 1; }
 
 .border-t {
   position: relative; }
-.border-t:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-top: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
+  .border-t:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-top: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
 
 .pec-mask3 {
   position: fixed;
@@ -1018,14 +1077,14 @@ header .pec-header-title {
 .no-massage {
   padding: 2.5rem 0.3rem 0;
   text-align: center; }
-.no-massage img {
-  width: 2.48rem;
-  height: 2.66rem;
-  display: inline-block; }
-.no-massage p {
-  font-size: 0.3rem;
-  color: #B2B2B2;
-  margin-top: 0.2rem; }
+  .no-massage img {
+    width: 2.48rem;
+    height: 2.66rem;
+    display: inline-block; }
+  .no-massage p {
+    font-size: 0.3rem;
+    color: #B2B2B2;
+    margin-top: 0.2rem; }
 
 .tran-xq {
   padding: 0.3rem;
@@ -1036,25 +1095,25 @@ header .pec-header-title {
 .tran-list {
   background: #FFFFFF;
   padding: 0.3rem 0; }
-.tran-list .tran-list-item {
-  line-height: 1.26;
-  position: relative;
-  min-height: 0.5rem;
-  padding-top: .10rem;
-  padding-bottom: .10rem;
-  padding-left: .30rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-.tran-list .tran-list-item .tran-item-head {
-  color: #B2B2B2;
-  font-size: 0.3rem;
-  width: 2.10rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-.tran-list .tran-list-item .tran-item-body {
-  color: #666666;
-  font-size: 0.3rem;
-  margin-right: .30rem; }
+  .tran-list .tran-list-item {
+    line-height: 1.26;
+    position: relative;
+    min-height: 0.5rem;
+    padding-top: .10rem;
+    padding-bottom: .10rem;
+    padding-left: .30rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .tran-list .tran-list-item .tran-item-head {
+      color: #B2B2B2;
+      font-size: 0.3rem;
+      width: 2.10rem;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    .tran-list .tran-list-item .tran-item-body {
+      color: #666666;
+      font-size: 0.3rem;
+      margin-right: .30rem; }
 
 .pec-list.h440 {
   max-height: 4.4rem;
@@ -1073,15 +1132,15 @@ header .pec-header-title {
   padding-right: 0.3rem;
   width: 100%;
   font-size: 0.3rem; }
-.choice-time li {
-  text-align: center;
-  width: 2.5rem; }
-.choice-time li:last-child {
-  width: 1.2rem; }
-.choice-time li p {
-  display: inline-block; }
-.choice-time li .icon-arrow {
-  margin: -0.03rem 0.2rem 0 0.2rem; }
+  .choice-time li {
+    text-align: center;
+    width: 2.5rem; }
+    .choice-time li:last-child {
+      width: 1.2rem; }
+    .choice-time li p {
+      display: inline-block; }
+    .choice-time li .icon-arrow {
+      margin: -0.03rem 0.2rem 0 0.2rem; }
 
 .adverJS-banner {
   margin: 0 0.3rem; }
@@ -1093,42 +1152,42 @@ header .pec-header-title {
   margin-right: .30rem;
   background: #FFFFFF;
   border-radius: .10rem; }
-.addCreditCard .txt {
-  color: #666666;
-  font-size: 0.26rem;
-  margin-top: .20rem; }
+  .addCreditCard .txt {
+    color: #666666;
+    font-size: 0.26rem;
+    margin-top: .20rem; }
 
 /*工资理财*/
 .curr-list {
   background-image: -webkit-linear-gradient(top, #f37938, #f99d43);
   background-image: linear-gradient(top, #f37938, #f99d43);
   color: #FFFFFF; }
-.curr-list .curr-list-item.h100 {
-  min-height: 1rem; }
-.curr-list .curr-list-item {
-  line-height: 1.26;
-  position: relative;
-  min-height: 0.9rem;
-  padding: 0.2rem 0.3rem;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 0.3rem; }
-.curr-list .curr-list-item:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #FFFFFF;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-  opacity: 0.2; }
-.curr-list .curr-list-item:nth-last-of-type(1):after {
-  display: none; }
+  .curr-list .curr-list-item.h100 {
+    min-height: 1rem; }
+  .curr-list .curr-list-item {
+    line-height: 1.26;
+    position: relative;
+    min-height: 0.9rem;
+    padding: 0.2rem 0.3rem;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.3rem; }
+    .curr-list .curr-list-item:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #FFFFFF;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      opacity: 0.2; }
+    .curr-list .curr-list-item:nth-last-of-type(1):after {
+      display: none; }
 
 .p-card {
   font-size: 0.4rem;
@@ -1149,82 +1208,82 @@ header .pec-header-title {
   box-sizing: border-box;
   font-size: 0.24rem;
   color: #B2B2B2; }
-.set-list-head:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
+  .set-list-head:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-bottom: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
 
 .set-foot-list {
   font-size: 0;
   position: relative;
   background: #FFFFFF; }
-.set-foot-list li:nth-child(odd):nth-last-child(2):after {
-  border: none; }
-.set-foot-list li:nth-child(even):before {
-  background: transparent; }
-.set-foot-list li:nth-last-child(1):after {
-  border: none; }
-.set-foot-list li {
-  display: inline-block;
-  width: 3.75rem;
-  height: 1.4rem;
-  position: relative;
-  overflow: hidden; }
-.set-foot-list li:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.set-foot-list li:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #e7e7e7;
-  width: 1px;
-  height: 100%;
-  z-index: 1;
-  -webkit-transform: scaleX(0.5);
-  transform: scaleX(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
+  .set-foot-list li:nth-child(odd):nth-last-child(2):after {
+    border: none; }
+  .set-foot-list li:nth-child(even):before {
+    background: transparent; }
+  .set-foot-list li:nth-last-child(1):after {
+    border: none; }
+  .set-foot-list li {
+    display: inline-block;
+    width: 3.75rem;
+    height: 1.4rem;
+    position: relative;
+    overflow: hidden; }
+    .set-foot-list li:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 0;
+      border-bottom: 1px solid #E7E7E7;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%; }
+    .set-foot-list li:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #e7e7e7;
+      width: 1px;
+      height: 100%;
+      z-index: 1;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%; }
 
 .set-li-box {
   height: 1.8rem;
   padding: 0.3rem 0.2rem 0.1rem 0.3rem; }
-.set-li-box .set-foot-head {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-right: 0.1rem; }
-.set-li-box .set-foot-head i {
-  margin-top: -0.03rem;
-  margin-left: -0.1rem; }
-.set-li-box .set-foot-body h1 {
-  font-size: 0.3rem;
-  color: #1E1E1E;
-  position: relative; }
-.set-li-box .set-foot-body p {
-  font-size: 0.22rem;
-  color: #B2B2B2;
-  margin-top: 0.1rem; }
+  .set-li-box .set-foot-head {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0.1rem; }
+    .set-li-box .set-foot-head i {
+      margin-top: -0.03rem;
+      margin-left: -0.1rem; }
+  .set-li-box .set-foot-body h1 {
+    font-size: 0.3rem;
+    color: #1E1E1E;
+    position: relative; }
+  .set-li-box .set-foot-body p {
+    font-size: 0.22rem;
+    color: #B2B2B2;
+    margin-top: 0.1rem; }
 
 .new-tip {
   font-size: 0.14rem;
@@ -1237,7 +1296,7 @@ header .pec-header-title {
 .bank-icon {
   width: 0.52rem;
   height: 0.52rem;
-  /*background: url("../images/Account-Balance/bank-4.png") no-repeat;*/
+  background: url("../../images/Account-management/bank-4.png") no-repeat;
   background-size: 100% 100%;
   display: inline-block;
   background-color: #FFFFFF;
@@ -1257,7 +1316,7 @@ header .pec-header-title {
 .salary-icon10,
 .salary-icon11,
 .salary-icon12 {
-  background: url("../images/Account-Balance/salary.png") no-repeat;
+  background: url("../../images/Account-management/salary.png") no-repeat;
   background-size: 0.5rem 15rem;
   width: 0.5rem;
   height: 0.5rem;
@@ -1324,79 +1383,62 @@ header .pec-header-title {
   padding: 0.3rem;
   background: #FFFFFF;
   position: relative; }
-.advert:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-bottom: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.advert:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 0;
-  border-top: 1px solid #E7E7E7;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%; }
-.advert .advert-head {
-  font-size: 0;
-  margin: 0 0.25rem 0 0.1rem; }
-.advert .advert-body p {
-  font-size: .38rem;
-  color: #1E1E1E;
-  font-weight: 700; }
-.advert .advert-body span {
-  font-size: 0.26rem;
-  color: #666666;
-  margin-top: 0.06rem;
-  display: inline-block; }
-.advert .advert-foot button {
-  background: #F37938;
-  border-radius: 0.08rem;
-  color: #FFFFFF;
-  min-width: 1.38rem;
-  height: .52rem;
-  font-size: 0.26rem;
-  padding: 0 0.1rem; }
+  .advert:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-bottom: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  .advert:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0;
+    border-top: 1px solid #E7E7E7;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+  .advert .advert-head {
+    font-size: 0;
+    margin: 0 0.25rem 0 0.1rem; }
+  .advert .advert-body p {
+    font-size: .38rem;
+    color: #1E1E1E;
+    font-weight: 700; }
+  .advert .advert-body span {
+    font-size: 0.26rem;
+    color: #666666;
+    margin-top: 0.06rem;
+    display: inline-block; }
+  .advert .advert-foot button {
+    background: #F37938;
+    border-radius: 0.08rem;
+    color: #FFFFFF;
+    min-width: 1.38rem;
+    height: .52rem;
+    font-size: 0.26rem;
+    padding: 0 0.1rem; }
 
-.icon-arrow-null {
-  width: .16rem;
-  height: .24rem;
-  margin-left: .16rem;
-  display: inline-block;
-  background-size: .16rem .24rem;
-  vertical-align: middle;
-  margin-top: -.04rem; }
-.icon-arrow-white-null {
-  width: .16rem;
-  height: .24rem;
-  margin-left: .16rem;
-  display: inline-block;
+.advert-icon {
+  width: .71rem;
+  height: .71rem;
+  background: url("../../images/Account-management/ad-icon.png") no-repeat;
   background-size: 100% 100%;
-  vertical-align: middle;
-  margin-top: -2px; }
-.aladdin-loading-content {
-  text-align: center;
-}
+  display: inline-block; }
 
-.aladdin-loading-icon {
-  margin-left: 0 !important;
-}
+.pec-list .pec-list-item .pec-item-head {
+  position: relative; }
 
-.pec-result {
-  background: none !important;
-}
 .currency {
   position: absolute;
   left: 0;
