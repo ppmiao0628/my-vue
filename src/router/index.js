@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import AnotherVue from '@/components/AnotherVue'
 import ViewMain from '@/view/main/App'
 import ViewTest from '@/view/test/App'
+import tomatoTime from '@/view/tomatoTime/App'
 
 Vue.use(Router)
 
@@ -13,6 +14,11 @@ export default new Router({
       path: '/hello',
       name: 'Hello',
       component: HelloWorld
+    },
+    {
+      path: '/tomatoTime',
+      name: 'tomatoTime',
+      component: tomatoTime
     },
     {
       path: '/another',

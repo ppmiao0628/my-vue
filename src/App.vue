@@ -17,6 +17,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            <router-link class="active" to='/tomatoTime' tag='li'><a href="/tomatoTime">tomatoTime</a></router-link>
             <router-link class="active" to='/hello' tag='li'><a href="/hello">hello</a></router-link>
             <router-link class="active" to='/another' tag='li'><a href="/another">another</a></router-link>
             <router-link class="active" to='/test' tag='li'><a href="/test">test</a></router-link>
