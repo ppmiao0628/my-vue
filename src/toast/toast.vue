@@ -1,11 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>hello keller</h2>
-    <div @click="alertajs">alertajs</div>
-    <div v-for="arr in arrObj">
-      <div>this {{arr}}</div>
-    </div>
+  <div class="wrap">
+    在下是弹窗
   </div>
 </template>
 
@@ -19,15 +14,6 @@
       }
     },
     ready: function () {
-//      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-//      for (let i = 0; i < arr.length; i++) {
-//        this.arrObj.push(arr[i])
-//        for (let j = 0; j < 99999; j++) {
-//          for (let a = 0; a < 9999; a++) {
-//            console.log(a)
-//          }
-//        }
-//      }
     },
     methods: {
       alertajs: function () {
@@ -42,9 +28,6 @@
             a = null
           }
         }, 10)
-//        require.ensure([], function () {
-//          require('../utiljs/utiljs.js')
-//        })
       }
     }
   }
@@ -52,11 +35,20 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  .hello {
-    background-color: #42b983;
+  .wrap{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background: rgba(0,0,0,.35);
+    padding:10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color: #FFFFFF;
   }
 </style>
