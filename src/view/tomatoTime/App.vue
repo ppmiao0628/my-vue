@@ -1,62 +1,139 @@
 <template>
   <div class="hello">
-
-
-
-    <hello-world></hello-world>
+    <div class="title-class">番茄时间法</div>
+    <div :class="timeClass">{{minTime}}:{{secTime}}</div>
+    <div><input class="input-event" type="text" placeholder="请输入你要做的事情" v-model="eventName"></div>
+    <div class="mtp-class">
+      <div>
+        <button class="tm-btn-primary" @click="startFun">{{startMenu}}</button>
+      </div>
+      <div>
+        <button class="tm-btn-primary" @click="restFun">{{restMenu}}</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import HelloWorld from '../../components/HelloWorld.vue'
-
   export default {
-    components: {HelloWorld},
+    components: {},
     name: 'app',
     data () {
       return {
-        item: [14, 53, 65, 99, 98, 12, 2, 3, 4, 5, 6, 7, 8, 9],
-        nextNum: 10,
-        parentMsg: '',
-        checkedMsg: [],
-        radioMsg: '',
-        age: 0,
-        show: true,
-        show1: true,
-        bshow: true,
-        agentInfo: navigator.userAgent,
-        appCodeName: navigator.appCodeName,
-        appVersion: navigator.appVersion,
+        minTime: '25',
+        secTime: '00',
+        eventName: '',
+        startMenu: '开始一个番茄时间',
+        startMenuFlag: 'true',
+        restMenu: '开始休息',
+        restMenuFlag: 'true',
+        timeClass: 'time-class',
         total: 0
       }
     },
+    created: function () {
+      this.initFun()
+    },
     methods: {
-      quickSort: function (left, right) {
-        let i, j, t, temp
-        temp = this.item[left]
-        i = left
-        j = right
-        while (i !== j) {
-          while (this.item[j] >= temp && i < j) {
-            j--
+      initFun: function () {
+        this.minTime = '00'
+        this.secTime = '05'
+        this.startMenu = '开始一个番茄时间'
+        this.timeClass = 'time-class'
+      },
+      startFun: function () {
+        let self = this
+        self.startMenuFlag = !self.startMenuFlag
+        self.startMenu = self.startMenuFlag ? '开始一个番茄时间' : '停止一个番茄时间'
+        self.minTime = '00'
+        self.secTime = '05'
+        self.updateTime()
+      },
+      restFun: function () {
+        // let self = this
+      },
+      abortFun: function () {
+        // let self = this
+      },
+      stopFun: function () {
+        // let self = this
+      },
+      updateTime: function () {
+        let self = this
+        this.timeClass = 'time-class-working'
+        let totalTime = Number(self.minTime) * 60 + Number(self.secTime)
+        let interval = setInterval(function () {
+          totalTime--
+          self.secTime = self.padStart(totalTime % 60)
+          self.minTime = self.padStart(Math.floor(totalTime / 60))
+          if (!totalTime) {
+            console.log('停止')
+            clearInterval(interval)
           }
-          while (this.item[i] <= temp && i < j) {
-            i++
-          }
-          if (i < j) {
-            t = this.item[i]
-            this.item[i] = this.item[j]
-            this.item[j] = t
-          }
-        }
-        this.item[left] = this.item[i]
-        this.item[i] = temp
-        this.quickSort(left, i - 1)
-        this.quickSort(i + 1, right)
+        }, 1000)
+      },
+      padStart: function (str) {
+        let len = String(str).length
+        return len > 1 ? str : '0' + str
       }
     }
   }
 </script>
 <style scoped>
+  div {
+    margin-top: 1rem;
+  }
 
+  .mtp-class {
+    margin-top: 3rem;
+  }
+
+  .title-class {
+    font-size: 6rem;
+    color: #ff1100;
+  }
+
+  .time-class {
+    font-size: 12rem;
+    color: #666666;
+  }
+
+  .time-class-working {
+    font-size: 12rem;
+    color: #11aaff;
+  }
+
+  .input-event {
+    line-height: 1.26;
+    position: relative;
+    height: 4rem;
+    width: 25%;
+    min-width: 20rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    padding-left: .3rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .tm-btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+  }
+
+  .tm-btn-primary:hover {
+    color: #fff;
+    background-color: #2e6da4;
+    border-color: #2e6da4;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+  }
 </style>
