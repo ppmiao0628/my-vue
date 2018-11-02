@@ -15,9 +15,11 @@
 </template>
 
 <script>
+  import store from '@/vuex/store'
   export default {
     components: {},
     name: 'app',
+    store,
     data () {
       return {
         minTime: '25',
