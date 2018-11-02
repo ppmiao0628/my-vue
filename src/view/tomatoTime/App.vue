@@ -16,6 +16,7 @@
 
 <script>
   import store from '@/vuex/store'
+
   export default {
     components: {},
     name: 'app',
@@ -63,12 +64,12 @@
       updateTime: function () {
         let self = this
         this.timeClass = 'time-class-working'
-        let totalTime = Number(self.minTime) * 60 + Number(self.secTime)
+        store.commit('setTotalTime', Number(self.minTime) * 60 + Number(self.secTime))
         let interval = setInterval(function () {
-          totalTime--
-          self.secTime = self.padStart(totalTime % 60)
-          self.minTime = self.padStart(Math.floor(totalTime / 60))
-          if (!totalTime) {
+          store.commit('reduce')
+          self.secTime = self.padStart(self.$store.state.totalTime % 60)
+          self.minTime = self.padStart(Math.floor(self.$store.state.totalTime / 60))
+          if (!self.$store.state.totalTime) {
             console.log('停止')
             clearInterval(interval)
           }
